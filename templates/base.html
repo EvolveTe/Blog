@@ -1,0 +1,580 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx" dir="rtl" >
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Orix - Our Blog</title>
+    <link rel="icon" href="{% static "img/logo-icon.png" %} />
+    <!-- CSS only -->
+   	<link href=' https:
+    //cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css' rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<head>
+    <!-- fancybox -->
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/perfect-scrollbar.css' %}"/>
+    <!-- magic-mouse -->
+    <link rel="stylesheet" href="{% static 'css/magic-mouse.css' %}"/>
+    <!-- aos -->
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}"/>
+    <!-- simple-line-icons -->
+    <link rel="stylesheet" href="{% static 'css/simple-line-icons.css' %}"/>
+    <!-- style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <!-- responsive -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}"/>
+    <!-- color -->
+    <link rel="stylesheet" href="{% static 'css/color.css' %}"/>
+    <!-- Font Awesome 5 -->
+    <script
+            src="https://kit.fontawesome.com/27a041baf1.js"
+            crossorigin="anonymous"
+    ></script>
+
+    <!-- Font -->
+    <link
+            href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+            rel="stylesheet"
+            type="text/css"
+    />
+</head>
+  <body class="menu-layer" style="font-family: Vazirmatn">
+    <!-- loader start-->
+    <div class="page-loader">
+      <div class="spinner">
+        <p>... در حال بارگزاری</p>
+        <div class="spinner-area spinner-first"></div>
+        <div class="spinner-area spinner-second"></div>
+        <div class="spinner-area spinner-third"></div>
+      </div>
+    </div>
+    <!-- loader end-->
+    <header class="two three" id="stickyHeader">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-2">
+            <div class="logo-icon">
+              <a class="magic-hover magic-hover__square" href="index.html">
+                <img class="light" src="{% static "img/orix-logo.png" %}" alt="logo" />
+                <img class="drak" src="{% static "img/black-logo.png" %}" alt="logo" />
+              </a>
+              <a
+                href="javascript:void(0)"
+                class="bar-menu magic-hover magic-hover__square"
+                ><i class="fa-solid fa-bars"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-xl-7">
+            <div class="menu-bar">
+              <nav>
+                <ul>
+                  <li class="menu-item-has-children">
+                    <a class="magic-hover magic-hover__square" href="#">خانه</a>
+
+                    <ul>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="index.html"
+                          >خانه 1</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="index-2.html"
+                          >خانه 2
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="index-3.html"
+                          >خانه 3
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="index-4.html"
+                          >خانه 4 ( Light )</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="index-4-dark.html"
+                          >خانه 4 ( Dark )</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="menu-item-has-children">
+                    <a class="magic-hover magic-hover__square" href="#"
+                      >خدمات</a
+                    >
+                    <ul>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="services.html"
+                          >خدمات</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="services-details.html"
+                          >Services Details</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="menu-item-has-children">
+                    <a class="magic-hover magic-hover__square" href="#"
+                      >نمونه کارها</a
+                    >
+                    <ul>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="portfolio-details-1.html"
+                          >نمونه کارها 1</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="portfolio-details-2.html"
+                          >نمونه کارها 2</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="portfolio-details-3.html"
+                          >نمونه کارها 3</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a class="magic-hover magic-hover__square" href="#"
+                      >وبلاگ</a
+                    >
+                    <ul>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="our-blog.html"
+                          >وبلاگ ما</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="blog-details-1.html"
+                          >صفحه تک وبلاگ 1</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="blog-details-2.html"
+                          >صفحه تک وبلاگ 2</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a class="magic-hover magic-hover__square" href="#"
+                      >صفحات</a
+                    >
+                    <ul>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="about.html"
+                          >درباره ما</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="pricing-plans.html"
+                          >Pricing Plans</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="magic-hover magic-hover__square"
+                          href="404.html"
+                          >404</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a
+                      class="magic-hover magic-hover__square"
+                      href="contact.html"
+                      >تماس با ما</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="col-xl-3">
+            <div class="extras">
+              <a
+                href="javascript:void(0)"
+                id="desktop-menu"
+                class="magic-hover magic-hover__square menu-btn"
+                style="margin-left: 1rem"
+              >
+                <i class="fa-solid fa-bars"></i>
+              </a>
+
+              <a
+                href="pdf/orix.pdf"
+                class="magic-hover magic-hover__square button download button--moema button--text-thick button--text-upper button--size-s"
+                target="_blank"
+                ><i class="fa-solid fa-download"></i>دانلود CV</a
+              >
+            </div>
+          </div>
+          <div class="menu-wrap">
+            <div class="menu-inner ps ps--active-x ps--active-y">
+              <span class="menu-cls-btn"
+                ><i class="cls-leftright"></i><i class="cls-rightleft"></i
+              ></span>
+              <div class="contact-info">
+                <a class="magic-hover magic-hover__square" href="index.html">
+                  <img src="{% static "img/black-logo.png" %}" alt="logo" />
+                </a>
+                <h5>
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است.
+                </h5>
+                <ul class="recent-news gallery-photos">
+                  <li>
+                    <a
+                      class="magic-hover magic-hover__square"
+                      href="https://via.placeholder.com/97x97"
+                      data-fancybox="gallery"
+                      ><img alt="girl" src="https://via.placeholder.com/97x97"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      class="magic-hover magic-hover__square"
+                      href="https://via.placeholder.com/97x97"
+                      data-fancybox="gallery"
+                      ><img alt="girl" src="https://via.placeholder.com/97x97"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      class="magic-hover magic-hover__square"
+                      href="https://via.placeholder.com/97x97"
+                      data-fancybox="gallery"
+                      ><img alt="girl" src="https://via.placeholder.com/97x97"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      class="magic-hover magic-hover__square"
+                      href="https://via.placeholder.com/97x97"
+                      data-fancybox="gallery"
+                      ><img alt="girl" src="https://via.placeholder.com/97x97"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      class="magic-hover magic-hover__square"
+                      href="https://via.placeholder.com/97x97"
+                      data-fancybox="gallery"
+                      ><img alt="girl" src="https://via.placeholder.com/97x97"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      class="magic-hover magic-hover__square"
+                      href="https://via.placeholder.com/97x97"
+                      data-fancybox="gallery"
+                      ><img alt="girl" src="https://via.placeholder.com/97x97"
+                    /></a>
+                  </li>
+                </ul>
+
+                <div class="e-mail">
+                  <div class="icon-box">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div>
+                    <h6>شماره موبایل</h6>
+                    <a
+                      class="magic-hover magic-hover__square"
+                      href="callto:+(123)4567890"
+                      >+(123) 456 7890</a
+                    >
+                  </div>
+                </div>
+                <div class="e-mail">
+                  <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                  <div>
+                    <h6>آدرس ایمیل</h6>
+                    <a
+                      class="magic-hover magic-hover__square"
+                      href="mailto:username@domain.com"
+                      >username@domain.com</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-nav" id="mobile-nav" style="display: block">
+        <div class="mobile-nav-img-data">
+          <a class="magic-hover magic-hover__square" href="index.html">
+            <img alt="logo" src="{% static "img/black-logo.png" %}" />
+          </a>
+        </div>
+        <ul>
+          <li class="menu-item-has-children">
+            <a class="magic-hover magic-hover__square" href="JavaScript:void(0)"
+              ><i class="icon-home"></i> خانه</a
+            >
+
+            <ul class="sub-menu">
+              <li>
+                <a class="magic-hover magic-hover__square" href="index.html"
+                  >خانه 1</a
+                >
+              </li>
+
+              <li>
+                <a class="magic-hover magic-hover__square" href="index-2.html"
+                  >خانه 2</a
+                >
+              </li>
+
+              <li>
+                <a class="magic-hover magic-hover__square" href="index-3.html"
+                  >خانه 3</a
+                >
+              </li>
+
+              <li>
+                <a class="magic-hover magic-hover__square" href="index-4.html"
+                  >خانه 4 ( Light )</a
+                >
+              </li>
+              <li>
+                <a
+                  class="magic-hover magic-hover__square"
+                  href="index-4-dark.html"
+                  >خانه 4 ( Dark )</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="magic-hover magic-hover__square" href="about.html"
+              ><i class="icon-user"></i> درباره ما</a
+            >
+          </li>
+
+          <li class="menu-item-has-children">
+            <a class="magic-hover magic-hover__square" href="JavaScript:void(0)"
+              ><i class="icon-briefcase"></i> نمونه کارها</a
+            >
+
+            <ul class="sub-menu">
+              <li>
+                <a
+                  class="magic-hover magic-hover__square"
+                  href="portfolio-details-1.html"
+                  >نمونه کارها Details 1</a
+                >
+              </li>
+
+              <li>
+                <a
+                  class="magic-hover magic-hover__square"
+                  href="portfolio-details-2.html"
+                  >نمونه کارها Details 2</a
+                >
+              </li>
+
+              <li>
+                <a
+                  class="magic-hover magic-hover__square"
+                  href="portfolio-details-3.html"
+                  >نمونه کارها Details 3</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-item-has-children">
+            <a class="magic-hover magic-hover__square" href="JavaScript:void(0)"
+              ><i class="icon-layers"></i>وبلاگ</a
+            >
+
+            <ul class="sub-menu">
+              <li>
+                <a class="magic-hover magic-hover__square" href="our-blog.html"
+                  >وبلاگ</a
+                >
+              </li>
+
+              <li>
+                <a
+                  class="magic-hover magic-hover__square"
+                  href="blog-details-1.html"
+                  >وبلاگ Details 1</a
+                >
+              </li>
+
+              <li>
+                <a
+                  class="magic-hover magic-hover__square"
+                  href="blog-details-2.html"
+                  >وبلاگ Details 2</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-item-has-children">
+            <a class="magic-hover magic-hover__square" href="JavaScript:void(0)"
+              ><i class="icon-folder"></i> صفحات</a
+            >
+
+            <ul class="sub-menu">
+              <li>
+                <a class="magic-hover magic-hover__square" href="services.html"
+                  >خدمات</a
+                >
+              </li>
+
+              <li>
+                <a
+                  class="magic-hover magic-hover__square"
+                  href="services-details.html"
+                  >خدمات Details</a
+                >
+              </li>
+
+              <li>
+                <a
+                  class="magic-hover magic-hover__square"
+                  href="pricing-plans.html"
+                  >Pricing Plans</a
+                >
+              </li>
+
+              <li>
+                <a class="magic-hover magic-hover__square" href="404.html"
+                  >404</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="magic-hover magic-hover__square" href="contact.html"
+              ><i class="icon-envelope-open"></i> تماس با ما</a
+            >
+          </li>
+        </ul>
+
+        <a
+          class="magic-hover magic-hover__square"
+          href="JavaScript:void(0)"
+          id="res-cross"
+        ></a>
+
+        <a
+          href="pdf/orix.pdf"
+          class="magic-hover magic-hover__square button download button--moema button--text-thick button--text-upper button--size-s"
+          target="_blank"
+          ><i class="fa-solid fa-download"></i>دانلود CV</a
+        >
+      </div>
+    </header>
+  {% block content %}"
+
+  {% endblock %}"
+   <footer class="gap" style="background-image: url(statics/img/footer.png)">
+      <div class="container">
+        <div class="footer-data">
+          <img alt="log" src="{% static "img/orix-logo.png" %}" />
+          <p>
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+          </p>
+          <ul class="social-media-footer">
+            <li>
+              <a class="magic-hover magic-hover__square" href="#"
+                ><i class="fa-brands fa-facebook-f fb"></i>فیسبوک</a
+              >
+            </li>
+            <li>
+              <a class="magic-hover magic-hover__square" href="#"
+                ><i class="fa-brands fa-twitter tw"></i>توییتر</a
+              >
+            </li>
+            <li>
+              <a class="magic-hover magic-hover__square" href="#"
+                ><i class="fa-brands fa-vimeo-v vi"></i>Vimeo</a
+              >
+            </li>
+            <li>
+              <a class="magic-hover magic-hover__square" href="#"
+                ><i class="fa-brands fa-linkedin-in in"></i>Linked In</a
+              >
+            </li>
+          </ul>
+          <h6>
+            © 2022 CV Resume<i class="fa-solid fa-heart"></i>By Winsfolio, All
+            Rights Reserved
+          </h6>
+        </div>
+      </div>
+    </footer>
+
+    <!-- bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery -->
+    <script src="{% static "js/jquery-3.6.0.min.js" %}"></script>
+    <!-- fancybox -->
+    <script src="{% static "js/jquery.fancybox.min.js" %}"></script>
+    <script src="{% static "js/particles.js" %}"></script>
+    <script src="{% static "js/particles-2.js" %}"></script>
+    <script src="{% static "js/perfect-scrollbar.min.js" %}"></script>
+    <!-- cursor -->
+    <script src="{% static "js/cursor.js" %}"></script>
+    <!-- aos -->
+    <script src="{% static "js/aos.js" %}"></script>
+    <!-- custom -->
+    <script src="{% static "js/custom.js" %}"></script>
+  </body>
+</html>
