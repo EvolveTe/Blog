@@ -51,6 +51,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mahan\Documents\GitHub\Blog" />
+      <recent name="C:\Users\mahan\Documents\GitHub\Blog\Blog_site" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Blog" type="Python.DjangoServer" factoryName="Django server">
       <module name="Blog" />
