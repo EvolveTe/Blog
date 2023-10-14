@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_jalali.db import models as jmodels
 
 
 # Create your models here
@@ -11,14 +12,14 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    image = models.ImageField(upload_to='blog', default='default.jpg')
+    image = models.ImageField(default='default.jpg')
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
     category = models.ManyToManyField(Category)
     views = models.IntegerField(default=0)
     status = models.BooleanField(default=False)
-    published_date = models.DateTimeField(null=True)
+    published_date = jmodels.jDateTimeField(auto_now_add=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 

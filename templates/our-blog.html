@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load jformat %}
+{% load blog_tag %}
 {% block content %}
     <section
       id="particles-js"
@@ -30,6 +32,10 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-12 col-sm-12">
+            {% for post in posts %}
+
+
+
             <div class="blog-details-one-data our-blog">
               <div
                 class="img-data"
@@ -37,10 +43,8 @@
                 data-aos-delay="200"
                 data-aos-duration="300"
               >
-                <img alt="blog-img" src="https://via.placeholder.com/856x482" />
-                <div class="message-icon">
-                  <i class="fa-solid fa-message"></i><span>12</span>
-                </div>
+                <a href="{% url "single" pid=post.id %}" ><img alt="blog-img" src="{{ post.image.url }}" /></a>
+
               </div>
               <div
                 class="marker"
@@ -48,34 +52,30 @@
                 data-aos-delay="300"
                 data-aos-duration="400"
               >
-                <h6>29 مرداد 1400</h6>
+                <h6>{{ post.published_date|jformat:'%y/%m/%d' }}</h6>
+                  <br>
+                  {% for cat in post.category.all %}
+                <a href="{% url 'category' cat_name=cat.name %}" ><h6>{{ cat.name }}</h6></a>{% if not forloop.last %} , {% endif %}
+                      {% endfor %}
                 <img alt="girl" src="https://via.placeholder.com/45x45" />
-                <h6>Willimes Marker</h6>
+                  <a href="{% url 'author' author_username=post.author.username %}"><h6>{{ post.author.get_full_name }}</h6></a>
               </div>
-              <h3>لورم ایپسوم متن ساختگی</h3>
+              <h3>{{ post.title }}</h3>
               <p
                 data-aos="fade-up"
                 data-aos-delay="400"
                 data-aos-duration="500"
               >
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
-                جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را
-                برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در
-                زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و
-                دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد
-                وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات
-                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                {{ post.content |snippet:100}}
               </p>
               <a
-                href="#"
+                href="{% url "single" pid=post.id %}"
                 class="magic-hover magic-hover__square button button--moema button--text-thick button--text-upper button--size-s"
                 >اطلاعات بیشتر</a
               >
+
             </div>
+                {% endfor %}
             <div class="blog-details-one-data our-blog">
               <div
                 class="img-data"
@@ -83,10 +83,7 @@
                 data-aos-delay="200"
                 data-aos-duration="300"
               >
-                <img alt="blog-img" src="https://via.placeholder.com/856x482" />
-                <div class="message-icon">
-                  <i class="fa-solid fa-message"></i><span>12</span>
-                </div>
+
               </div>
               <div
                 class="marker"
@@ -94,171 +91,7 @@
                 data-aos-delay="300"
                 data-aos-duration="400"
               >
-                <h6>29 مرداد 1400</h6>
-                <img alt="girl" src="https://via.placeholder.com/45x45" />
-                <h6>Willimes Marker</h6>
               </div>
-              <h3>لورم ایپسوم متن ساختگی</h3>
-              <p
-                data-aos="fade-up"
-                data-aos-delay="400"
-                data-aos-duration="500"
-              >
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
-                جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را
-                برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در
-                زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و
-                دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد
-                وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات
-                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-              </p>
-              <a
-                href="#"
-                class="magic-hover magic-hover__square button button--moema button--text-thick button--text-upper button--size-s"
-                >اطلاعات بیشتر</a
-              >
-            </div>
-            <div class="blog-details-one-data our-blog">
-              <div
-                class="img-data"
-                data-aos="fade-up"
-                data-aos-delay="200"
-                data-aos-duration="300"
-              >
-                <img alt="blog-img" src="https://via.placeholder.com/856x482" />
-                <div class="message-icon">
-                  <i class="fa-solid fa-message"></i><span>12</span>
-                </div>
-              </div>
-              <div
-                class="marker"
-                data-aos="fade-up"
-                data-aos-delay="300"
-                data-aos-duration="400"
-              >
-                <h6>29 مرداد 1400</h6>
-                <img alt="girl" src="https://via.placeholder.com/45x45" />
-                <h6>Willimes Marker</h6>
-              </div>
-              <h3>لورم ایپسوم متن ساختگی</h3>
-              <p
-                data-aos="fade-up"
-                data-aos-delay="400"
-                data-aos-duration="500"
-              >
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
-                جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را
-                برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در
-                زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و
-                دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد
-                وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات
-                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-              </p>
-              <a
-                href="#"
-                class="magic-hover magic-hover__square button button--moema button--text-thick button--text-upper button--size-s"
-                >اطلاعات بیشتر</a
-              >
-            </div>
-            <div class="blog-details-one-data our-blog">
-              <div
-                class="img-data"
-                data-aos="fade-up"
-                data-aos-delay="200"
-                data-aos-duration="300"
-              >
-                <img alt="blog-img" src="https://via.placeholder.com/856x482" />
-                <div class="message-icon">
-                  <i class="fa-solid fa-message"></i><span>12</span>
-                </div>
-              </div>
-              <div
-                class="marker"
-                data-aos="fade-up"
-                data-aos-delay="300"
-                data-aos-duration="400"
-              >
-                <h6>29 مرداد 1400</h6>
-                <img alt="girl" src="https://via.placeholder.com/45x45" />
-                <h6>Willimes Marker</h6>
-              </div>
-              <h3>لورم ایپسوم متن ساختگی</h3>
-              <p
-                data-aos="fade-up"
-                data-aos-delay="400"
-                data-aos-duration="500"
-              >
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
-                جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را
-                برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در
-                زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و
-                دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد
-                وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات
-                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-              </p>
-              <a
-                href="#"
-                class="magic-hover magic-hover__square button button--moema button--text-thick button--text-upper button--size-s"
-                >اطلاعات بیشتر</a
-              >
-            </div>
-            <div class="blog-details-one-data our-blog">
-              <div
-                class="img-data"
-                data-aos="fade-up"
-                data-aos-delay="200"
-                data-aos-duration="300"
-              >
-                <img alt="blog-img" src="https://via.placeholder.com/856x482" />
-                <div class="message-icon">
-                  <i class="fa-solid fa-message"></i><span>12</span>
-                </div>
-              </div>
-              <div
-                class="marker"
-                data-aos="fade-up"
-                data-aos-delay="300"
-                data-aos-duration="400"
-              >
-                <h6>29 مرداد 1400</h6>
-                <img alt="girl" src="https://via.placeholder.com/45x45" />
-                <h6>Willimes Marker</h6>
-              </div>
-              <h3>لورم ایپسوم متن ساختگی</h3>
-              <p
-                data-aos="fade-up"
-                data-aos-delay="400"
-                data-aos-duration="500"
-              >
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
-                جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را
-                برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در
-                زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و
-                دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد
-                وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات
-                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-              </p>
-              <a
-                href="#"
-                class="magic-hover magic-hover__square button button--moema button--text-thick button--text-upper button--size-s"
-                >اطلاعات بیشتر</a
-              >
             </div>
             <div class="pagination">
               <ul>
@@ -277,83 +110,8 @@
             </div>
           </div>
           <div class="col-lg-4 col-md-12 col-sm-12">
-            <ul
-              class="recent-news"
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="300"
-            >
-              <li><h4>جدید ترین ها</h4></li>
-              <li class="recent-news-data">
-                <img alt="img" src="https://via.placeholder.com/80x80" />
-                <div class="recent-data">
-                  <h6>20 مرداد 1400</h6>
-                  <a class="magic-hover magic-hover__square" href="#"
-                    >لورم ایپسوم متن ساختگی Mark Seliger</a
-                  >
-                </div>
-              </li>
-              <li class="recent-news-data">
-                <img alt="img" src="https://via.placeholder.com/80x80" />
-                <div class="recent-data">
-                  <h6>20 مرداد 1400</h6>
-                  <a class="magic-hover magic-hover__square" href="#"
-                    >لورم ایپسوم متن ساختگی Mark Seliger</a
-                  >
-                </div>
-              </li>
-              <li class="recent-news-data">
-                <img alt="img" src="https://via.placeholder.com/80x80" />
-                <div class="recent-data">
-                  <h6>20 مرداد 1400</h6>
-                  <a class="magic-hover magic-hover__square" href="#"
-                    >لورم ایپسوم متن ساختگی Mark Seliger</a
-                  >
-                </div>
-              </li>
-              <li class="recent-news-data">
-                <img alt="img" src="https://via.placeholder.com/80x80" />
-                <div class="recent-data">
-                  <h6>20 مرداد 1400</h6>
-                  <a class="magic-hover magic-hover__square" href="#"
-                    >لورم ایپسوم متن ساختگی Mark Seliger</a
-                  >
-                </div>
-              </li>
-            </ul>
-            <ul
-              class="recent-news categories"
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="300"
-            >
-              <li class="style"><h4>دسته بندی ها</h4></li>
-              <li>
-                <a class="magic-hover magic-hover__square" href="#"
-                  >لورم ایپسوم متن ساختگی <span>10</span></a
-                >
-              </li>
-              <li>
-                <a class="magic-hover magic-hover__square" href="#"
-                  >لورم ایپسوم متن ساختگی <span>10</span></a
-                >
-              </li>
-              <li>
-                <a class="magic-hover magic-hover__square" href="#"
-                  >لورم ایپسوم متن ساختگی <span>10</span></a
-                >
-              </li>
-              <li>
-                <a class="magic-hover magic-hover__square" href="#"
-                  >لورم ایپسوم متن ساختگی <span>10</span></a
-                >
-              </li>
-              <li>
-                <a class="magic-hover magic-hover__square" href="#"
-                  >لورم ایپسوم متن ساختگی <span>10</span></a
-                >
-              </li>
-            </ul>
+                {% latest 4%}
+                {% postcategories %}
             <ul
               class="recent-news meta-links"
               data-aos="fade-up"

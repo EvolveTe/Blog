@@ -1,0 +1,15 @@
+     <ul
+              class="recent-news categories"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="300"
+            >
+              <li class="style"><h4>دسته بندی ها</h4></li>
+         {% for name,count in categories.items %}
+              <li>
+                <a class="magic-hover magic-hover__square" href="{% url 'category' cat_name=name %}"
+                  >{{ name }}<span>{{ count }}</span></a
+                >
+              </li>
+         {% endfor %}
+            </ul>

@@ -1,0 +1,20 @@
+{% load jformat %}
+<ul
+              class="recent-news"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="300"
+            >
+              <li><h4>جدید ترین ها</h4></li>
+       {% for post in posts %}
+              <li class="recent-news-data">
+                <img alt="img" style="width: 80px; height: 80px; margin-left: 10px; " src="{{ post.image.url }}" />
+                <div class="recent-data">
+                  <h6>{{ post.published_date|jformat:'%y/%m/%d' }}</h6>
+                  <a class="magic-hover magic-hover__square" href="{% url 'single' pid=post.id %}"
+                    >{{ post.title }}</a
+                  >
+                </div>
+              </li>
+    {% endfor %}
+            </ul>

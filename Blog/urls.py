@@ -24,6 +24,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-
+    path('<int:pid>', blog_single, name='single'),
+    path('author/<str:author_username>', index, name='author'),
+    path('category/<str:cat_name>', blog_category, name='category')
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
