@@ -1,6 +1,8 @@
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from Blog_site.models import *
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .forms import NameForm
 
 
 # Create your views here.
@@ -31,3 +33,14 @@ def blog_category(request, cat_name):
     posts = posts.filter(category__name=cat_name)
     content = {'posts': posts}
     return render(request, 'our-blog.html', content)
+
+
+def test(request):
+    if request.method == 'POst':
+        form = NameForm(request.POST)
+        if form.is_valid():
+            return HttpResponse('done')
+        else:
+            return HttpResponse('not valid')
+    form = NameForm()
+    return render(request, 'test.html', {'form': form})

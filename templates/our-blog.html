@@ -96,15 +96,25 @@
             <div class="pagination">
               <ul>
                 <li class="prev">
-                  <a href="javascript:void(0)"> prev</a>
+                            {% if posts.has_previous %}
+                  <a href="?page={{ posts.previous_page_number }}"> prev</a>
+                            {% endif %}
+
                 </li>
-                <li><a href="javascript:void(0)">1</a></li>
-                <li><a href="javascript:void(0)">2</a></li>
-                <li><a href="javascript:void(0)">3</a></li>
-                <li><a href="javascript:void(0)">...</a></li>
-                <li class="non"><a href="javascript:void(0)">16</a></li>
+                          {% for i in posts.paginator.page_range %}
+                              {% if posts.number == i %}
+                <li class="active"><a href="?page={{ i }}">{{ i }}</a></li>
+                                  {% else %}
+                                  <li ><a href="?page={{ i }}">{{ i }}</a></li>
+
+                          {% endif %}
+              {% endfor %}
                 <li class="prev">
-                  <a href="javascript:void(0)">next</a>
+                            {% if posts.has_next %}
+
+                  <a href="?page={{ posts.next_page_number }}">next</a>
+                            {% endif %}
+
                 </li>
               </ul>
             </div>
